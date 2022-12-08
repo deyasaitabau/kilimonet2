@@ -1,0 +1,66 @@
+ .form{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    display: flex;
+    align-content: center;
+    align-items: center; 
+    width: 55%; 
+    height: 60%;
+    text-align: center; 
+    margin-left: 350px; 
+    border: 0.5px solid white;
+    box-shadow: 3px 3px 5px 6px #34495e; 
+    border-radius: 50px;
+    font-family: 'Courier New', Courier, monospace; 
+ }
+ form{
+    padding-left: 60px;
+    margin-top: 0px;
+    /* padding-top: 0px;
+    border-top: 1px solid black; */
+  }
+ h3{
+   text-align: center; 
+   font-family: 'Courier New', Courier, monospace;
+   color: #34495e;
+  }
+ hr{
+    background-color: #34495e;
+    height: 4px;
+    margin-bottom: 0px;
+    width: 70%;
+  }
+ .label{
+    margin-top: 13px;
+ }
+ input[type="radio"] {
+margin-top: -1px;
+vertical-align: middle;
+ }
+ select{
+border:0.5px solid #34495e;
+height: 35px;
+border-radius: 5px;
+width: 165px;  
+text-align: center; 
+font-family: 'Courier New', Courier, monospace;
+ }
+ input{
+border:0.5px solid #34495e;
+height: 35px;
+border-radius: 5px;
+text-align: center;
+   }
+    
+button{
+    border:0.5px solid #34495e;
+    height: 35px;
+    width: 200px;   
+    border-radius: 5px;
+    background-color: green;
+ }
+ button:hover{
+     cursor: pointer;
+     color: whitesmoke;
+     background-color: #34495e;
+ }

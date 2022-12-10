@@ -28,6 +28,10 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/tablecss.css">
+<link rel="stylesheet" href="./css/main.css">
+<script  type="text/javascript" src="./js/table.js"></script>
+<script type="text/javascript" src="./js/tab.js"></script>
 <script src="./js/script.js" defer></script>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
@@ -138,10 +142,7 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
 </article>
 </article>
 <article class="container">
-    <article class="section"> 
-            <!-- <h1>Welcome<span></span></h1>
-                <h1 style="padding-left:30%;">To</h1>
-            <a href="./users/survey.php"><h1>Kilimonet</h1></a> -->
+    <article class="section">
         </article>
     </article>
     <!--livestock prices at various livestock yards displaced in tabular format-->
@@ -199,100 +200,94 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
             <img src="./images/cows.jpg" alt="" class="founder1" style="width: 250px; height: 100%;">
             </div>
               </div>
-
-                 <table class="market-price">
-
-                    <thead>
-                        <tr>
-                            <td colspan="4"><H1>CATTLE</H1></td>
+            <div>
+              <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+                
+                    <div class="dataTables_length" id="tableID_length">        
+                 </div>                    
+                    <H1 style="text-align:center">CATTLE</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
                         </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>live weight</td>
-                            <td>price(ksh)</td>                    
-                        </tr>
-                    <?php
-                      if(mysqli_num_rows($query_illibilis1) > 0){
-                      ?>
+                      </thead>
+                      <tbody>                                      
                       <?php
-                        while($data = mysqli_fetch_assoc($query_illibilis1)){    
-                      ?>
+                        if(mysqli_num_rows($query_illibilis1) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_illibilis1)){    
+                        ?>
+                          <tr class="row">
                         
-                        <tr>
-                       
-                            <td> <?php  echo($data['weight']); ?> </td>
-                            <td><?php  echo($data['price']); ?></td>
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
+
+                        }
+                        else  if(mysqli_num_rows($query_illibilis1) <= 0){
+                          ?>
+                          <tr>                       
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
                         </tr>
                         <?php
+
                         }
-
-                      }
-                      else  if(mysqli_num_rows($query_illibilis1) <= 0){
                         ?>
-                        <tr>
-                            <td>live weight</td>
-                            <td>price(ksh)</td>
-                           
+                      </tbody>
+                    </table>
+                  
+                    <H1 style="text-align:center">SHEEP AND GOAT</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
                         </tr>
-                        <tr>
-                       
-                        <td> 'empty set'</td>
-                        <td>'empty set'</td>
-                       </tr>
-                       <?php
-
-                      }
-                      ?>
-                    </tbody>
-                </table>
-                <table class="market-price">
-
-                    <thead>
-                        <tr>
-                            <td colspan="4"><H1>sheep / Goat</H1></td>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                            <td>live weight</td>
-                            <td>price(ksh)</td>
-                           
-                        </tr>
-                    <?php
-                      if(mysqli_num_rows($query_illibilis2) > 0){
-                      ?>
+                      </thead>
+                      <tbody>                                      
                       <?php
-                        while($data = mysqli_fetch_assoc($query_illibilis2)){    
-                      ?>
+                        if(mysqli_num_rows($query_illibilis2) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_illibilis2)){    
+                        ?>
+                          <tr class="row">
                         
-                        <tr>
-                       
-                            <td> <?php  echo($data['weight']); ?> </td>
-                            <td><?php  echo($data['price']); ?></td>
+                              <td> <?php  echo($data['weight']); ?> </td>
+
+                              <?php
+                                
+                              ?>
+
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
+
+                        }
+                        else  if(mysqli_num_rows($query_illibilis2) <= 0){
+                          ?>
+                          
+                          <tr>
+                        
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
                         </tr>
                         <?php
+
                         }
-
-                      }
-                      else  if(mysqli_num_rows($query_illibilis2) <= 0){
                         ?>
-                        <tr>
-                            <td>live weight</td>
-                            <td>price(ksh)</td>
-                           
-                        </tr>
-                        <tr>
-                       
-                        <td> 'empty set'</td>
-                        <td>'empty set'</td>
-                       </tr>
-                       <?php
+                      </tbody>
+                    </table>
 
-                      }
-                      ?>
-                    </tbody>
-                </table>
             <div id="curve_chart" style="width: 900px; height: 500px"></div>
             <!--Emali market-->
                 <h1 class="title">Emali Market</h1>
@@ -309,99 +304,86 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                     </div>
                     </div>
 
-                    <table class="market-price">
-<thead>
-    <tr>
-                                <td colspan="2"><h1>CATTLE</h1></td>
-                                <td colspan="2"><H1>SHEEP&GOAT</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-<?php
-  if(mysqli_num_rows($query_emali1) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_emali1)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                    <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="dataTables_length" id="tableID_length">        
+                 </div>                    
+                    <H1 style="text-align:center">CATTLE</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_emali1) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_emali1)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-  }
-  else  if(mysqli_num_rows($query_emali1) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        else  if(mysqli_num_rows($query_emali1) <= 0){
+                          ?>
+                          <tr>                       
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  ?>
-</tbody>
-</table>
-<table class="market-price">
+                        }
+                        ?>
+                      </tbody>
+                    </table>
+                  
+                    <H1 style="text-align:center">SHEEP AND GOAT</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_emali2) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_emali2)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-<thead>
-    <tr>
-        <td colspan="4"><H1>sheep / Goat</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-    </tr>
-<?php
-  if(mysqli_num_rows($query_emali2) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_emali2)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                        }
+                        else  if(mysqli_num_rows($query_emali2) <= 0){
+                          ?>
+                          
+                          <tr>
+                        
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  else  if(mysqli_num_rows($query_emali2) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
-
-  }
-  ?>
-</tbody>
-</table>
+                        }
+                        ?>
+                      </tbody>
+                    </table>
                     <div id="curve_chart2" style="width: 900px; height: 500px"></div>
                     <!--sultan hamud market-->
                     <h1 class="title">Sultan Hamud Market</h1>
@@ -436,98 +418,87 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                          </div>
                         
                         
-                        <table class="market-price">
-<thead>
-    <tr>
-                                    <td colspan="2"><h1>CATTLE</h1></td>
-                                    <td colspan="2"><H1>SHEEP&GOAT</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-    </tr>
-<?php
-  if(mysqli_num_rows($query_sulatan1) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_sulatan1)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                         <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="dataTables_length" id="tableID_length">        
+                 </div>                    
+                    <H1 style="text-align:center">CATTLE</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_sulatan1) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_sulatan1)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-  }
-  else  if(mysqli_num_rows($query_sulatan1) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        else  if(mysqli_num_rows($query_sulatan1) <= 0){
+                          ?>
+                          <tr>                       
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  ?>
-</tbody>
-</table>
-<table class="market-price">
+                        }
+                        ?>
+                      </tbody>
+                    </table>
+                  
+                    <H1 style="text-align:center">SHEEP AND GOAT</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_sulatan2) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_sulatan2)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-<thead>
-    <tr>
-        <td colspan="4"><H1>sheep / Goat</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-    </tr>
-<?php
-  if(mysqli_num_rows($query_sulatan2) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_sulatan2)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                        }
+                        else  if(mysqli_num_rows($query_sulatan2) <= 0){
+                          ?>
+                          
+                          <tr>
+                        
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  else  if(mysqli_num_rows($query_sulatan2) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        ?>
+                      </tbody>
+                    </table>
 
-  }
-  ?>
-</tbody>
-</table>
                         <div id="curve_chart3" style="width: 900px; height: 500px"></div>
                         <!--Ewuaso Kedong Livestock Market-->
                             <h1 class="title">Ewuaso Kedong Livestock Market</h1>
@@ -569,99 +540,87 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                             <!-- <img src="./images/image.jpg">
                             <img src="./images/FB_IMG_1663161101546.jpg">
                             <p>This market is located near Ewuaso Kedong shopping center. </p> -->
-                            <table class="market-price">
-<thead>
-    <tr>
-                                        <td colspan="2"><h1>CATTLE</h1></td>
-                                        <td colspan="2"><H1>SHEEP&GOAT</H1></td>
-    </tr>
-</thead>
-<tbody>
-<?php
-  if(mysqli_num_rows($query_kedong1) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_kedong1)){    
-  ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                            <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="dataTables_length" id="tableID_length">        
+                 </div>                    
+                    <H1 style="text-align:center">CATTLE</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_kedong1) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_kedong1)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-  }
-  else  if(mysqli_num_rows($query_kedong1) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        else  if(mysqli_num_rows($query_kedong1) <= 0){
+                          ?>
+                          <tr>                       
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  ?>
-</tbody>
-</table>
-<table class="market-price">
+                        }
+                        ?>
+                      </tbody>
+                    </table>
+                  
+                    <H1 style="text-align:center">SHEEP AND GOAT</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_kedong2) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_kedong2)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-<thead>
-    <tr>
-        <td colspan="4"><H1>sheep / Goat</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-<?php
-  if(mysqli_num_rows($query_kedong2) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_kedong2)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                        }
+                        else  if(mysqli_num_rows($query_kedong2) <= 0){
+                          ?>
+                          
+                          <tr>
+                        
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  else  if(mysqli_num_rows($query_kedong2) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        ?>
+                      </tbody>
+                    </table>
 
-  }
-  ?>
-</tbody>
-</table>
                             <div id="curve_chart4" style="width: 900px; height: 500px"></div>
                     <!--kimana market-->
                     <h1 class="title" >Kimana Market</h1>
@@ -700,99 +659,87 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                     <!-- <img src="./images/img5.jpg"> -->
                     <!-- <p>traders selling their livestock in Kimana livestock market,kajiado county.Hundreds of Maasai people gather at Kimana town every Tuesday,forming one of the largest Maasai livestock markets in Kenya. Maasai people mainly live in southern Kenya and northern Tanzania. As a nomadic ethnic group in eastern Africa,
                         Maasai people rely on livestock breeding as their main source of livelihood.</p> -->
-                        <table class="market-price">
-<thead>
-    <tr>
-                                    <td colspan="2"><h1>CATTLE</h1></td>
-                                    <td colspan="2"><H1>SHEEP&GOAT</H1></td>
-    </tr>
-</thead>
-<tbody>
-<tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-<?php
-  if(mysqli_num_rows($query_kimana1) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_kimana1)){    
-  ?>
-    
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+              <div id="tableID_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="dataTables_length" id="tableID_length">        
+                 </div>                    
+                    <H1 style="text-align:center">CATTLE</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_kimana1) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_kimana1)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-  }
-  else  if(mysqli_num_rows($query_kimana1) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        else  if(mysqli_num_rows($query_kimana1) <= 0){
+                          ?>
+                          <tr>                       
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  ?>
-</tbody>
-</table>
-<table class="market-price">
+                        }
+                        ?>
+                      </tbody>
+                    </table>
+                  
+                    <H1 style="text-align:center">SHEEP AND GOAT</H1>              
+                    <table id="tableID" class="display dataTable no-footer" style="grid-auto-columns: auto;" role="grid" aria-describedby="tableID_info">
+                
+                      <thead>
+                        <tr role="row">
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Profile  : activate to sort column descending" style="width: 40.7188px; ">Live Weight</th>
+                          <th  tabindex="0" aria-controls="tableID" rowspan="1" colspan="1" aria-label="Id No : activate to sort column ascending" style="width: 48.8906px;">Price (ksh)</th>
+                        </tr>
+                      </thead>
+                      <tbody>                                      
+                      <?php
+                        if(mysqli_num_rows($query_kimana2) > 0){
+                        ?>
+                        <?php
+                          while($data = mysqli_fetch_assoc($query_kimana2)){    
+                        ?>
+                          <tr class="row">
+                        
+                              <td> <?php  echo($data['weight']); ?> </td>
+                              <td><?php  echo($data['price']); ?></td>
+                          </tr>
+                          <?php
+                          }
 
-<thead>
-    <tr>
-        <td colspan="4"><H1>sheep / Goat</H1></td>
-    </tr>
-</thead>
-<tbody>
-<?php
-  if(mysqli_num_rows($query_kimana2) > 0){
-  ?>
-  <?php
-    while($data = mysqli_fetch_assoc($query_kimana2)){    
-  ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-        <td> <?php  echo($data['weight']); ?> </td>
-        <td><?php  echo($data['price']); ?></td>
-    </tr>
-    <?php
-    }
+                        }
+                        else  if(mysqli_num_rows($query_kimana2) <= 0){
+                          ?>
+                          
+                          <tr>
+                        
+                          <td> 'empty set'</td>
+                          <td>'empty set'</td>
+                        </tr>
+                        <?php
 
-  }
-  else  if(mysqli_num_rows($query_kimana2) <= 0){
-    ?>
-    <tr>
-        <td>live weight</td>
-        <td>price(ksh)</td>
-       
-    </tr>
-    <tr>
-   
-    <td> 'empty set'</td>
-    <td>'empty set'</td>
-   </tr>
-   <?php
+                        }
+                        ?>
+                      </tbody>
+                    </table>
 
-  }
-  ?>
-</tbody>
-</table>
                         <div id="curve_chart5" style="width: 900px; height: 500px"></div>
                     <h2 class="furtherresearch">Further Research <hr> </h2>
                         <div class="research">

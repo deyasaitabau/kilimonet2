@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,7 +11,6 @@
  <link rel="stylesheet" href="../css/blog.css"> 
 </head>
 <body>
-
 <article class="topnav" id="myTopnav">
     <article class="logo">
         <img class="Mylogo" src="../images/jpg.webp">
@@ -21,17 +21,11 @@
   </a>
 </article>
 </article>
-
     <!--dual-purpose breeds-->
     <article class="dual-purpose">
-        <h1>Dual-Purpose Sheep</h1> 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo est unde molestiae 
-            iusto recusandae ullam nam. Delectus unde eaque assumenda. 
-            Officia incidunt rem velit voluptatum minus recusandae perferendis Lorem ipsum dolor 
-            sit amet consectetur, adipisicing elit. Eum, sit sed. Quibusdam tempore nulla fugit 
-            sapiente necessitatibus 
-            magni corrupti facere explicabo, optio totam quo, itaque eligendi accusantium fuga expedita praesentium.
-            aspernatur explicabo.</p>
+        <h1>Dual-Purpose </h1> 
+        <p>Dual-purpose farm animals are those that are bred and raised for two purposes, such as for both meat and milk production. These animals can provide a valuable source of income for farmers and ranchers, as they can be used for their meat, milk, and other products. Examples of dual-purpose farm animals include sheep, goats, and cattle. These animals are typically hardy and adaptable, able to thrive in a variety of environments and climates. They are also known for their strong mothering instincts, which make them good mothers and help to ensure that their offspring are healthy and well-fed. Dual-purpose farm animals are an
+           important resource for farmers and ranchers, providing both meat and milk, which can be sold for income</p>
         <!--dorper-->
         <h3>1.The Dorper <hr></h3>
         <article class="text">
@@ -80,7 +74,6 @@
               both internal and external. Cows average 2270 kg of milk during a 
               lactation while suckling a calf and much higher milk yields have been recorded </p>
               <img src="../images/index3.jpg" style="width: 450px; height: 200px%;">
-
          </article>
          
     
@@ -94,7 +87,6 @@
     
 </article>
 </article>  -->
-
 <article class="last-container">
                         <div class="footer">
                         <div class="social-buttons">
@@ -118,10 +110,8 @@
 <div>
 <p class="footertext">Contact Us: Email:deyasaitabau@gmail.com</p>
 <p class="footertext"> Direct-helpline:+254729533373</p>
-
 </div>
 </article>
 </article>
-
 </body>
 </html>

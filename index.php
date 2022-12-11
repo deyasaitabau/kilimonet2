@@ -142,7 +142,10 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
 </article>
 </article>
 <article class="container">
-    <article class="section">
+    <article class="section"> 
+            <!-- <h1>Welcome<span></span></h1>
+                <h1 style="padding-left:30%;">To</h1>
+            <a href="./users/survey.php"><h1>Kilimonet</h1></a> -->
         </article>
     </article>
     <!--livestock prices at various livestock yards displaced in tabular format-->
@@ -150,33 +153,19 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
               <div>
              <h2> Welcome To Kilimonet <hr></h2>
             
-              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, perspiciatis. 
-                Veritatis repellendus rem vero Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Facilis officia suscipit voluptate, nihil neque rerum quos incidunt dicta, 
-                mollitia pariatur non asperiores totam ex esse veritatis? Placeat harum mollitia 
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis quisquam, maxime natus rem incidunt
-                 in distinctio.
-                 Numquam dolor iste molestiae ullam possimus, est quasi impedit? Quae odio recusandae cum suscipit.
-                  architecto.
-                 cum soluta nam labore recusandae, mollitia ut neque id quidem. Iusto rerum molestias nobis 
-                 beatae dolor.</p>
+              <p>?Kilimonet is a program I am working on to provide a tangible solution to many challenges faced by livestock keepers and livestock dealers in Kenya today, 
+                particularly in Kajiado County, potent to them by climate change. Today, livestock keepers and dealers face the 
+                challenge of unreliable rainfall, leading to drought. Consequently, farmers have had to sell their livestock at low prices. This is not because their animals’ health and fitness are very poor but because no local livestock dealer is willing to buy because there are no feeds to feed livestock in the future. Kilimonet wants to solve the challenge in the following way:Availing the most responsive livestock prices from all accredited livestock markets in Kajiado County to all livestock dealers in Kenya. By doing this, large numbers of livestock dealers from regions with sufficient animal feeds will be attracted to trade in such markets due to low prices. 
+                This spiral effect leads to an increase in demand, which leads to a rise in prices.</p>
                  </div>
           <div class="textimage">
             <div class="founderimage">
-            <img src="./images/Founder.webp" alt="" class="founder" style="width: 250px;
+            <img src="./images/laban.jpg" alt="" class="founder" style="width: 250px;
   height: 100%;">
             </div>
                  <div class="toptext">
                    <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati dolor unde, 
-                    nemo ducimus aut facere debitis numquam, 
-                    ipsum perspiciatis, eveniet Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit ducimus 
-                    voluptatibus ipsa necessitatibus at aliquam minima inventore tenetur, vero, porro cumque explicabo. 
-                    Ad asperiores quisquam, magnam consequuntur eaque tenetur ipsa.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam ab quisquam asperiores nostrum 
-                    reiciendis cumque quis iste 
-                    corrupti voluptatibus commodi in consequatur vitae animi eius, ullam rerum aperiam dolores aut.
-                    accusantium non eum consectetur modi dicta incidunt quis atque laborum!
+                Laban deya is the founder of Kilimonet. he is passionate agripreneur. he is a resident of Kajiado county 
                   </p>
                     </div>
               </div>
@@ -232,7 +221,7 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                         }
                         else  if(mysqli_num_rows($query_illibilis1) <= 0){
                           ?>
-                          <tr>                       
+                          <tr class="tableRow">                       
                           <td> 'empty set'</td>
                           <td>'empty set'</td>
                         </tr>
@@ -628,12 +617,10 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                     <div class="textimage1">
                     <div class="toptext1">
                         <p>
-                          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo sunt magnam 
-                          consectetur ea fugiat beatae harum eius reprehenderit aliquam, 
-                          corrupti itaque, expedita quisquam at quibusdam minima numquam nemo doloribus voluptatibus.
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium unde similique tenetur 
-                        dolor recusandae enim quasi
-                         autem quibusdam eum. Culpa voluptas nemo deserunt dolorum vitae natus nisi, fugiat eius non.
+                        traders selling their livestock in Kimana livestock market,kajiado county.Hundreds of Maasai people gather 
+                        at Kimana town every Tuesday,forming one of the largest Maasai livestock markets in Kenya. Maasai people mainly live in
+                         southern Kenya and northern Tanzania. As a nomadic ethnic group in eastern Africa,
+                         Maasai people rely on livestock breeding as their main source of livelihood
                         </p>
                           </div>
                           <div class="founderimage1">
@@ -743,12 +730,21 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                         <div id="curve_chart5" style="width: 900px; height: 500px"></div>
                     <h2 class="furtherresearch">Further Research <hr> </h2>
                         <div class="research">
-                        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed laudantium doloribus labore, 
-                          omnis deleniti, ad ipsum  
-                        similique minus enim, animi ut <a href="https://www.kalro.org/">Kenya Agricultural and Livestock Research Organization</a>sit quaerat sequi assumenda sint dolorem debitis? Velit, eius?Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia libero laboriosam expedita natus ipsa architecto consectetur nobis quod voluptatem deserunt, 
-                        quasi perspiciatis laborum asperiores? Deleniti animi dicta eius veritatis 
-                        exercitationem! Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore amet doloribus provident odio magnam dolor obcaecati soluta accusamus assumenda qui. 
-                        Blanditiis maxime hic reiciendis, dignissimos earum sunt ratione quasi quo.
+                        <p> <h3>Drough/climate change</h3>
+                        climate change has signifivantly affected global agriculture in the 21st century.A2007 assessment report by intergovernmental panel on climate change (IPCC)
+                        indicate that most countries will experience an increase in average temperature, more frequent heat waves,more stressed water 
+                        resources , desertification ,and periods of heavy precipitation.Farmers in Kenya face a variety of challenges from pests to drought
+                         The changing climate has led to erratic weather that offten catches farmers unaware, and has become a major concern as the situation
+                         is likely to worsen in the future. Kenya has,in the recent past, experienced severe drought that has left kenyans vulnerable because 
+                         of the countrys high dependency on natural resource and its low capacity to adapt and cope with climate-related impacts.
+                         <h4>Factors affecting yield</h4>
+                         Due to the factors noted above ,it is not surprising that this study found climate change and drought are among the biggest factors 
+                         affecting yield Fifty percent of the farmers we surveyed said that climate change had affected their yield in the past season ,and 17% said that 
+                         drought had affected yield .Climate was also listed as one of the key challenges farmers face overall, with 27% identifying the as a challenge they face 
+                         <br><h4>source: shamba shape up<h4> 
+                          <br>
+                        <a href="https://www.kalro.org/">Kenya Agricultural and Livestock Research Organization</a>
+                        <br>
                          <a href="https://meteo.go.ke/">Kenya Meteorological Department</a>
                                           </p>
                         </div>
@@ -767,7 +763,7 @@ $query_illibilis2 = mysqli_query($conn,"SELECT * FROM questionnaire where  marke
                         <article class="last-container">
                         <div class="footer">
                         <div class="social-buttons">
-  <a href="#" class="social-button social-button--facebook" aria-label="Facebook" >
+  <a href="https://www.facebook.com/profile.php?id=100072257630546&mibextid=ZbWKwL" class="social-button social-button--facebook" aria-label="Facebook" >
     <i id="icon"id="icon" class="fab fa-facebook-f" ></i>
   </a>
   <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn" >

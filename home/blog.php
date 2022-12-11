@@ -98,7 +98,7 @@
 <article class="last-container">
                         <div class="footer">
                         <div class="social-buttons">
-  <a href="#" class="social-button social-button--facebook" aria-label="Facebook" >
+  <a href="https://www.facebook.com/profile.php?id=100072257630546&mibextid=ZbWKwL " class="social-button social-button--facebook" aria-label="Facebook" >
     <i id="icon"id="icon" class="fab fa-facebook-f" ></i>
   </a>
   <a href="#" class="social-button social-button--linkedin" aria-label="LinkedIn" >
